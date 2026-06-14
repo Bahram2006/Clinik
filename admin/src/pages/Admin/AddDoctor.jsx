@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../context/AdminContext";
 import {toast} from 'react-toastify'
+import axios from 'axios'
 
 const AddDoctor = () => {
 
@@ -46,9 +47,23 @@ const AddDoctor = () => {
             formData.forEach((value,key)=>{
                 console.log(`${key} : ${value}`);
             })
+
+            const {data} = await axios.post(backendUrl + '/api/admin/add-doctor',formData, {headers:{aToken}})
+
+            if (data.success) {
+                toast.success(data.message)
+                setDocImg(false)
+                setName('')
+                setPassword('')
+                setAddress1('')
+                setFees('')
+            } else {
+                toast.error(data.message)
+            }
             
         } catch (error) {
-            
+            toast.error(error.message)
+            console.log(error)
         }
 
     }
