@@ -98,4 +98,4 @@ const allDoctors =  async (req,res) => {
     }
 }
 
-export {addDoctor,loginAdmin}
+export {addDoctor,loginAdmin, allDoctors}

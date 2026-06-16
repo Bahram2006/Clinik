@@ -33,9 +33,10 @@ const AddDoctor = () => {
 
             const formData = new  FormData()
 
-            formData.append('image',docImg)
-            formData.append('name',name)
-            formData.append('password',password)
+            formData.append('image', docImg)
+            formData.append('name', name)
+            formData.append('email', email)
+            formData.append('password', password)
             formData.append('experience',experience)
             formData.append('fees',Number(fees))
             formData.append('about',about)
@@ -54,8 +55,10 @@ const AddDoctor = () => {
                 toast.success(data.message)
                 setDocImg(false)
                 setName('')
+                setEmail('')      // <-- Şu setiri goşuň!
                 setPassword('')
                 setAddress1('')
+                setAddress2('')   // <-- Şu setiri goşuň!
                 setFees('')
             } else {
                 toast.error(data.message)
