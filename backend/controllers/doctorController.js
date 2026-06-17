@@ -1,7 +1,5 @@
 import doctorModel from "../models/doctorModel.js";
 
-const { useEffect, useState } = require("react");
-
 
 const changeAvailability = async (req,res) => {
     try {
