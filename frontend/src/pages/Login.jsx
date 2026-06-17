@@ -1,8 +1,15 @@
 // import React from 'react'
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
+import axios from "axios";
 
 const Login = () => {
+
+
+  const { backendUrl, token, setToken } = useContext(AppContext)
+
+
   const [state, setState] = useState("Sign Up");
 
   const [email, setEmail] = useState("");
