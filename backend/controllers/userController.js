@@ -76,4 +76,8 @@ const loginUser = async (req,res) => {
 
 }
 
+// API to get user profile data sammy iysinde ustunlik diydi
+
+
+
 export {registerUser,loginUser}
