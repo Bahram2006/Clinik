@@ -45,13 +45,13 @@ const DoctorProfile = () => {
           </div>
 
           <p className="text-gray-600 font-medium mt-4">
-            Appointment fee: <span className="text-gray-800">{currency} {profileData.fees}</span>
+            Appointment fee: <span className="text-gray-800">{currency} {isEdit ? <input type="number" onChange={(e)=>setProfileData(prev => ({...prev, fees: e.target.value}))} value={profileData.fees} /> : profileData.fees}</span>
           </p>
 
           <div className="flex gap-2 py-2">
             <p>Address:</p>
             <p className="text-sm">
-              {profileData.address.line1}
+              {isEdit ? <input type="text" onChange={(e)=>setProfileData(prev => ({...prev,address:{...prev.address,line1:}}))} /> :  profileData.address.line1}
               <br />
               {profileData.address.line2}
             </p>
