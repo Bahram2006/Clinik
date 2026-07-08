@@ -51,5 +51,57 @@
     "actions": "Hereketler",
     "cancelled": "Ýatyryldy",
     "completed": "Tamamlandy"
+  },
+  "dashboard": {
+    "doctors": "Doktorlar",
+    "appointments": "Duşuşyklar",
+    "patients": "Hassalar",
+    "latest_bookings": "Iň soňky bellenen duşuşyklar",
+    "cancelled": "Ýatyryldy",
+    "completed": "Tamamlandy"
+  },
+  "doctors_list": {
+    "title": "Ähli Doktorlar",
+    "available": "Elýeterli"
+  },
+  "doctor_appointments": {
+    "title": "Ähli Duşuşyklar",
+    "patient": "Hassa",
+    "payment": "Töleg",
+    "age": "Ýaşy",
+    "date_time": "Sene we wagt",
+    "fees": "Töleg",
+    "action": "Hereket",
+    "online": "Onlaýn",
+    "cash": "Nagt",
+    "cancelled": "Ýatyryldy",
+    "completed": "Tamamlandy"
+  },
+  "doctor_dashboard": {
+    "earnings": "Girdeji",
+    "appointments": "Duşuşyklar",
+    "patients": "Hassalar",
+    "latest_bookings": "Iň soňky bellenen duşuşyklar",
+    "cancelled": "Ýatyryldy",
+    "completed": "Tamamlandy"
+  },
+  "doctor_profile": {
+    "about": "Barada:",
+    "appointment_fee": "Duşuşyk tölegi:",
+    "address": "Salgy:",
+    "available": "Elýeterli",
+    "save": "Saklamak",
+    "edit": "Üýtgetmek"
+  },
+  "login": {
+    "admin": "Admin",
+    "doctor": "Doktor",
+    "login_title": "Giriş",
+    "email": "Email",
+    "password": "Parol",
+    "login_button": "Giriş",
+    "doctor_login_prompt": "Doktor girişi?",
+    "admin_login_prompt": "Admin girişi?",
+    "click_here": "Şu ýere basyň"
   }
 }

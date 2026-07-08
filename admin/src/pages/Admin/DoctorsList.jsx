@@ -1,11 +1,12 @@
 // import React from 'react'
-
 import { useContext, useEffect } from "react";
 import { AdminContext } from "../../context/AdminContext";
+import { useTranslation } from "react-i18next";
 
 const DoctorsList = () => {
   const { doctors, aToken, getAllDoctors, changeAvailability } =
     useContext(AdminContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (aToken) {
@@ -15,7 +16,7 @@ const DoctorsList = () => {
 
   return (
     <div className="m-5 max-h-[90vh] overflow-y-scroll">
-      <h1 className="text-lg font-medium">All Doctors</h1>
+      <h1 className="text-lg font-medium">{t("doctors_list.title")}</h1>
       <div className="w-full flex flex-wrap gap-4 pt-5 gap-y-6">
         {doctors.map((item, index) => (
           <div
@@ -31,14 +32,16 @@ const DoctorsList = () => {
               <p className="text-neutral-800 text-lg font-medium">
                 {item.name}
               </p>
-              <p className="text-zinc-600 text-sm">{item.speciality}</p>
+              <p className="text-zinc-600 text-sm">
+                {t(`specialities.${item.speciality}`, item.speciality)}
+              </p>
               <div className="mt-2 flex items-center gap-1 text-sm">
                 <input
                   onChange={() => changeAvailability(item._id)}
                   type="checkbox"
                   checked={item.available}
                 />
-                <p>Available</p>
+                <p>{t("doctors_list.available")}</p>
               </div>
             </div>
           </div>

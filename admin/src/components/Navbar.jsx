@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const { aToken, setAtoken } = useContext(AdminContext);
   const { dToken, setDToken } = useContext(DoctorContext);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -19,6 +19,10 @@ const Navbar = () => {
     aToken && localStorage.removeItem("aToken");
     dToken && setDToken("");
     dToken && localStorage.removeItem("dToken");
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -33,12 +37,39 @@ const Navbar = () => {
           {aToken ? t("navbar.admin") : t("navbar.doctor")}
         </p>
       </div>
-      <button
-        onClick={logout}
-        className="bg-primary text-white text-sm px-10 py-2 rounded-full"
-      >
-        {t("navbar.logout")}
-      </button>
+
+      <div className="flex items-center gap-4">
+        {/* ------- Language Switcher ------- */}
+        <div className="flex items-center gap-1 border rounded-full p-1 text-xs font-medium">
+          <button
+            onClick={() => changeLanguage("tk")}
+            className={`px-3 py-1 rounded-full transition-all ${
+              i18n.language === "tk"
+                ? "bg-primary text-white"
+                : "text-gray-500"
+            }`}
+          >
+            TK
+          </button>
+          <button
+            onClick={() => changeLanguage("en")}
+            className={`px-3 py-1 rounded-full transition-all ${
+              i18n.language === "en"
+                ? "bg-primary text-white"
+                : "text-gray-500"
+            }`}
+          >
+            EN
+          </button>
+        </div>
+
+        <button
+          onClick={logout}
+          className="bg-primary text-white text-sm px-10 py-2 rounded-full"
+        >
+          {t("navbar.logout")}
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,16 @@
 // import React from 'react'
-
 import { useContext, useEffect, useState } from "react";
 import { DoctorContext } from "../../context/DoctorContext";
 import { AppContext } from "../../context/AppContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const DoctorProfile = () => {
   const { dToken, profileData, setProfileData, getProfileData, backendUrl } =
     useContext(DoctorContext);
   const { currency } = useContext(AppContext);
+  const { t } = useTranslation();
 
   const [isEdit, setIsEdit] = useState(false);
 
@@ -66,7 +67,8 @@ const DoctorProfile = () => {
             </p>
             <div className="flex items-center gap-2 mt-1 text-gray-600">
               <p>
-                {profileData.degree} - {profileData.speciality}{" "}
+                {profileData.degree} -{" "}
+                {t(`specialities.${profileData.speciality}`, profileData.speciality)}
               </p>
               <button className="py-0.5 px-2 border text-xs rounded-full">
                 {profileData.experience}
@@ -76,7 +78,7 @@ const DoctorProfile = () => {
             {/* ----- Doc About ----- */}
             <div>
               <p className="flex items-center gap-1 text-sm font-medium text-neutral-800 mt-3">
-                About:
+                {t("doctor_profile.about")}
               </p>
               <p className="text-sm text-gray-600 max-w-[700px] mt-1">
                 {profileData.about}
@@ -84,7 +86,7 @@ const DoctorProfile = () => {
             </div>
 
             <p className="text-gray-600 font-medium mt-4">
-              Appointment fee:{" "}
+              {t("doctor_profile.appointment_fee")}{" "}
               <span className="text-gray-800">
                 {currency}{" "}
                 {isEdit ? (
@@ -105,7 +107,7 @@ const DoctorProfile = () => {
             </p>
 
             <div className="flex gap-2 py-2">
-              <p>Address:</p>
+              <p>{t("doctor_profile.address")}</p>
               <p className="text-sm">
                 {isEdit ? (
                   <input
@@ -153,7 +155,7 @@ const DoctorProfile = () => {
                 name=""
                 id=""
               />
-              <label htmlFor="">Available</label>
+              <label htmlFor="">{t("doctor_profile.available")}</label>
             </div>
 
             {isEdit ? (
@@ -161,14 +163,14 @@ const DoctorProfile = () => {
                 onClick={updateProfile}
                 className="px-4 py-1 border border-primary text-sm rounded-full mt-5 hover:bg-primary hover:text-white transition-all"
               >
-                Save
+                {t("doctor_profile.save")}
               </button>
             ) : (
               <button
                 onClick={() => setIsEdit(true)}
                 className="px-4 py-1 border border-primary text-sm rounded-full mt-5 hover:bg-primary hover:text-white transition-all"
               >
-                Edit
+                {t("doctor_profile.edit")}
               </button>
             )}
           </div>

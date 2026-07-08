@@ -1,15 +1,16 @@
 // import React from 'react'
-
 import { useContext, useEffect } from "react";
 import { AdminContext } from "../../context/AdminContext";
 import { assets } from "../../assets/assets";
 import { AppContext } from "../../context/AppContext";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
   const { aToken, getDashData, cancelAppointment, dashData } =
     useContext(AdminContext);
 
   const { slotDateFormat } = useContext(AppContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (aToken) {
@@ -27,7 +28,7 @@ const Dashboard = () => {
               <p className="text-xl font-semibold text-gray-600">
                 {dashData.doctors}
               </p>
-              <p className="text-gray-400">Doctors</p>
+              <p className="text-gray-400">{t("dashboard.doctors")}</p>
             </div>
           </div>
 
@@ -37,7 +38,7 @@ const Dashboard = () => {
               <p className="text-xl font-semibold text-gray-600">
                 {dashData.appointments}
               </p>
-              <p className="text-gray-400">Appointments</p>
+              <p className="text-gray-400">{t("dashboard.appointments")}</p>
             </div>
           </div>
 
@@ -47,7 +48,7 @@ const Dashboard = () => {
               <p className="text-xl font-semibold text-gray-600">
                 {dashData.patients}
               </p>
-              <p className="text-gray-400">Patients</p>
+              <p className="text-gray-400">{t("dashboard.patients")}</p>
             </div>
           </div>
         </div>
@@ -55,7 +56,7 @@ const Dashboard = () => {
         <div className="bg-white">
           <div className="flex items-center gap-2.5 px-4 py-4 mt-10 rounded-t border">
             <img src={assets.list_icon} alt="" />
-            <p className="font-semibold">Latest Bookings</p>
+            <p className="font-semibold">{t("dashboard.latest_bookings")}</p>
           </div>
 
           <div className="pt-4 border border-t-0">
@@ -78,10 +79,12 @@ const Dashboard = () => {
                   </p>
                 </div>
                 {item.cancelled ? (
-                  <p className="text-red-400 text-xs font-medium">Cancelled</p>
+                  <p className="text-red-400 text-xs font-medium">
+                    {t("dashboard.cancelled")}
+                  </p>
                 ) : item.isCompleted ? (
                   <p className="text-green-500 text-xs font-medium">
-                    Completed
+                    {t("dashboard.completed")}
                   </p>
                 ) : (
                   <img

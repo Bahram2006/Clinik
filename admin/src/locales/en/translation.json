@@ -51,5 +51,57 @@
     "actions": "Actions",
     "cancelled": "Cancelled",
     "completed": "Completed"
+  },
+  "dashboard": {
+    "doctors": "Doctors",
+    "appointments": "Appointments",
+    "patients": "Patients",
+    "latest_bookings": "Latest Bookings",
+    "cancelled": "Cancelled",
+    "completed": "Completed"
+  },
+  "doctors_list": {
+    "title": "All Doctors",
+    "available": "Available"
+  },
+  "doctor_appointments": {
+    "title": "All Appointments",
+    "patient": "Patient",
+    "payment": "Payment",
+    "age": "Age",
+    "date_time": "Date & Time",
+    "fees": "Fees",
+    "action": "Action",
+    "online": "Online",
+    "cash": "CASH",
+    "cancelled": "Cancelled",
+    "completed": "Completed"
+  },
+  "doctor_dashboard": {
+    "earnings": "Earnings",
+    "appointments": "Appointments",
+    "patients": "Patients",
+    "latest_bookings": "Latest Bookings",
+    "cancelled": "Cancelled",
+    "completed": "Completed"
+  },
+  "doctor_profile": {
+    "about": "About:",
+    "appointment_fee": "Appointment fee:",
+    "address": "Address:",
+    "available": "Available",
+    "save": "Save",
+    "edit": "Edit"
+  },
+  "login": {
+    "admin": "Admin",
+    "doctor": "Doctor",
+    "login_title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "login_button": "Login",
+    "doctor_login_prompt": "Doctor Login?",
+    "admin_login_prompt": "Admin Login?",
+    "click_here": "Click here"
   }
 }
