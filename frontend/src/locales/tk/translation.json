@@ -87,5 +87,17 @@
     "booking_slots": "Boş wagtlar",
     "book_button": "Duşuşyk bellemek",
     "login_warning": "Duşuşyk bellemek üçin ilki giriň"
+  },
+  "contact": {
+    "title_line1": "HABARLAŞMAK",
+    "title_line2": "ÜÇIN",
+    "office_title": "Biziň Ofisimiz",
+    "address_line1": "Aşgabat şäheri,",
+    "address_line2": "Türkmenistan",
+    "phone_label": "Tel:",
+    "email_label": "Email:",
+    "careers_title": "Sanly Saglyk-da işlemek",
+    "careers_text": "Toparymyz we boş iş orunlary barada has köp öwreniň.",
+    "explore_jobs": "Işleri gör"
   }
 }

@@ -87,5 +87,17 @@
     "booking_slots": "Booking slots",
     "book_button": "Book an appointment",
     "login_warning": "Login to book appointment"
+  },
+  "contact": {
+    "title_line1": "CONTACT",
+    "title_line2": "US",
+    "office_title": "Our OFFICE",
+    "address_line1": "Ashgabat city,",
+    "address_line2": "Turkmenistan",
+    "phone_label": "Tel:",
+    "email_label": "Email:",
+    "careers_title": "Careers at Sanly Saglyk",
+    "careers_text": "Learn more about our teams and job openings.",
+    "explore_jobs": "Explore Jobs."
   }
 }
