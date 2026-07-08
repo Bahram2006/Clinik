@@ -127,5 +127,18 @@
     "cancelled": "Duşuşyk ýatyryldy",
     "completed": "Tamamlandy",
     "months": ["", "Ýan", "Few", "Mart", "Apr", "Maý", "Iýun", "Iýul", "Awg", "Sen", "Okt", "Noý", "Dek"]
+  },
+  "profile": {
+    "contact_info": "Habarlaşmak maglumaty",
+    "email_label": "Email:",
+    "phone_label": "Telefon:",
+    "address_label": "Salgy:",
+    "basic_info": "Esasy maglumat",
+    "gender_label": "Jyns:",
+    "male": "Erkek",
+    "female": "Aýal",
+    "birthday_label": "Doglan güni:",
+    "save": "Saklamak",
+    "edit": "Üýtgetmek"
   }
 }

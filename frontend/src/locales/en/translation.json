@@ -127,5 +127,18 @@
     "cancelled": "Appointment cancelled",
     "completed": "Completed",
     "months": ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "profile": {
+    "contact_info": "CONTACT INFORMATION",
+    "email_label": "Email id:",
+    "phone_label": "Phone:",
+    "address_label": "Address:",
+    "basic_info": "BASIC INFORMATION",
+    "gender_label": "Gender:",
+    "male": "Male",
+    "female": "Female",
+    "birthday_label": "Birthday:",
+    "save": "Save information",
+    "edit": "Edit"
   }
 }
