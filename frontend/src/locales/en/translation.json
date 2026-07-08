@@ -8,5 +8,15 @@
     "my_profile": "My Profile",
     "my_appointments": "My Appointments",
     "logout": "Logout"
+  },
+  "footer": {
+    "description": "Sanly Saglyk — book trusted doctors easily and manage your health with confidence.",
+    "company": "COMPANY",
+    "home": "Home",
+    "about_us": "About us",
+    "contact_us": "Contact us",
+    "privacy_policy": "Privacy policy",
+    "get_in_touch": "GET IN TOUCH",
+    "copyright": "Copyright 2025@ Sanly Saglyk - All Right Reserved."
   }
 }

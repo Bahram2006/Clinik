@@ -8,5 +8,15 @@
     "my_profile": "Meniň profilim",
     "my_appointments": "Duşuşyklarym",
     "logout": "Çykmak"
+  },
+  "footer": {
+    "description": "Sanly Saglyk — ynamdar doktorlar bilen aňsatlyk bilen duşuşyk belläň we saglygyňyzy dolandyryň.",
+    "company": "KOMPANIÝA",
+    "home": "Baş sahypa",
+    "about_us": "Biz barada",
+    "contact_us": "Habarlaşmak",
+    "privacy_policy": "Gizlinlik syýasaty",
+    "get_in_touch": "HABARLAŞYŇ",
+    "copyright": "Copyright 2025@ Sanly Saglyk - Ähli hukuklar goralan."
   }
 }
