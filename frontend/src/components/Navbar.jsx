@@ -3,9 +3,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const { token, setToken, userData } = useContext(AppContext);
 
@@ -26,19 +28,19 @@ const Navbar = () => {
       />
       <ul className="hidden md:flex items-start gap-5 font-medium">
         <NavLink to="/">
-          <li className="py-1">HOME</li>
+          <li className="py-1">{t("navbar.home")}</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
         <NavLink to="/doctors">
-          <li className="py-1">ALL DOCTORS</li>
+          <li className="py-1">{t("navbar.all_doctors")}</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
         <NavLink to="/about">
-          <li className="py-1">ABOUT</li>
+          <li className="py-1">{t("navbar.about")}</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
         <NavLink to="/contact">
-          <li className="py-1">CONTACT</li>
+          <li className="py-1">{t("navbar.contact")}</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
       </ul>
@@ -53,16 +55,16 @@ const Navbar = () => {
                   onClick={() => navigate("my-profile")}
                   className="hover:text-black cursor-pointer"
                 >
-                  My Profile
+                  {t("navbar.my_profile")}
                 </p>
                 <p
                   onClick={() => navigate("my-appointments")}
                   className="hover:text-black cursor-pointer"
                 >
-                  My Appointments
+                  {t("navbar.my_appointments")}
                 </p>
                 <p onClick={logout} className="hover:text-black cursor-pointer">
-                  Logout
+                  {t("navbar.logout")}
                 </p>
               </div>
             </div>
@@ -72,7 +74,7 @@ const Navbar = () => {
             onClick={() => navigate("/login")}
             className="bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block"
           >
-            Create account
+            {t("navbar.create_account")}
           </button>
         )}
         <img
@@ -83,7 +85,9 @@ const Navbar = () => {
         />
         {/* ------ Mobile Menu ------ */}
         <div
-          className={` ${showMenu ? "fixed w-full" : "h-0 w-0"} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}
+          className={` ${
+            showMenu ? "fixed w-full" : "h-0 w-0"
+          } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}
         >
           <div className="flex items-center justify-between px-5 py-6">
             <img className="w-36" src={assets.logo} alt="" />
@@ -96,16 +100,16 @@ const Navbar = () => {
           </div>
           <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium">
             <NavLink onClick={() => setShowMenu(false)} to="/">
-              <p className="px-4 py-2 rounded inline-block">HOME</p>
+              <p className="px-4 py-2 rounded inline-block">{t("navbar.home")}</p>
             </NavLink>
             <NavLink onClick={() => setShowMenu(false)} to="/doctors">
-              <p className="px-4 py-2 rounded inline-block">ALL DOCTORS</p>
+              <p className="px-4 py-2 rounded inline-block">{t("navbar.all_doctors")}</p>
             </NavLink>
             <NavLink onClick={() => setShowMenu(false)} to="/about">
-              <p className="px-4 py-2 rounded inline-block">ABOUT</p>
+              <p className="px-4 py-2 rounded inline-block">{t("navbar.about")}</p>
             </NavLink>
             <NavLink onClick={() => setShowMenu(false)} to="/contact">
-              <p className="px-4 py-2 rounded inline-block">CONTACT</p>
+              <p className="px-4 py-2 rounded inline-block">{t("navbar.contact")}</p>
             </NavLink>
           </ul>
         </div>

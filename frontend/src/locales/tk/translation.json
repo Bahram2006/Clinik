@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "home": "Baş sahypa",
+    "all_doctors": "Ähli doktorlar",
+    "about": "Biz barada",
+    "contact": "Habarlaşmak",
+    "create_account": "Hasap döretmek",
+    "my_profile": "Meniň profilim",
+    "my_appointments": "Duşuşyklarym",
+    "logout": "Çykmak"
+  }
+}

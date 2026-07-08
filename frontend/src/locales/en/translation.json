@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "home": "HOME",
+    "all_doctors": "ALL DOCTORS",
+    "about": "ABOUT",
+    "contact": "CONTACT",
+    "create_account": "Create account",
+    "my_profile": "My Profile",
+    "my_appointments": "My Appointments",
+    "logout": "Logout"
+  }
+}
