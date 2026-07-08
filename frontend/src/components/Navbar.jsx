@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const { token, setToken, userData } = useContext(AppContext);
 
@@ -16,6 +16,10 @@ const Navbar = () => {
   const logout = () => {
     setToken(false);
     localStorage.removeItem("token");
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -44,6 +48,27 @@ const Navbar = () => {
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
       </ul>
+
+      {/* ------- Language Switcher ------- */}
+      <div className="hidden md:flex items-center gap-1 border rounded-full p-1 text-xs font-medium">
+        <button
+          onClick={() => changeLanguage("tk")}
+          className={`px-3 py-1 rounded-full transition-all ${
+            i18n.language === "tk" ? "bg-primary text-white" : "text-gray-500"
+          }`}
+        >
+          TK
+        </button>
+        <button
+          onClick={() => changeLanguage("en")}
+          className={`px-3 py-1 rounded-full transition-all ${
+            i18n.language === "en" ? "bg-primary text-white" : "text-gray-500"
+          }`}
+        >
+          EN
+        </button>
+      </div>
+
       <div className="flex items-center gap-4">
         {token && userData ? (
           <div className="flex items-center gap-2 cursor-pointer group relative">
@@ -111,6 +136,30 @@ const Navbar = () => {
             <NavLink onClick={() => setShowMenu(false)} to="/contact">
               <p className="px-4 py-2 rounded inline-block">{t("navbar.contact")}</p>
             </NavLink>
+
+            {/* ------- Mobile Language Switcher ------- */}
+            <div className="flex items-center gap-1 border rounded-full p-1 text-sm font-medium mt-3">
+              <button
+                onClick={() => changeLanguage("tk")}
+                className={`px-4 py-1 rounded-full transition-all ${
+                  i18n.language === "tk"
+                    ? "bg-primary text-white"
+                    : "text-gray-500"
+                }`}
+              >
+                TK
+              </button>
+              <button
+                onClick={() => changeLanguage("en")}
+                className={`px-4 py-1 rounded-full transition-all ${
+                  i18n.language === "en"
+                    ? "bg-primary text-white"
+                    : "text-gray-500"
+                }`}
+              >
+                EN
+              </button>
+            </div>
           </ul>
         </div>
       </div>
