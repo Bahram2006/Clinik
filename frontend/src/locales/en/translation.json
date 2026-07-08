@@ -103,5 +103,18 @@
   "doctors_page": {
     "browse": "Browse through the doctors specialist.",
     "filters": "Filters"
+  },
+  "login": {
+    "create_account": "Create Account",
+    "login": "Login",
+    "signup_prompt": "Please Sign up to book appointment",
+    "login_prompt": "Please log in to book appointment",
+    "full_name": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "already_have_account": "Already have an account?",
+    "login_here": "Login here",
+    "create_new_account": "Create an new account?",
+    "click_here": "click here"
   }
 }

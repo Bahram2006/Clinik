@@ -103,5 +103,18 @@
   "doctors_page": {
     "browse": "Hünärmen doktorlaryň arasyndan gözlemek.",
     "filters": "Süzgüçler"
+  },
+  "login": {
+    "create_account": "Hasap döretmek",
+    "login": "Giriş",
+    "signup_prompt": "Duşuşyk bellemek üçin hasaba serediň",
+    "login_prompt": "Duşuşyk bellemek üçin giriň",
+    "full_name": "Doly ady",
+    "email": "Email",
+    "password": "Parol",
+    "already_have_account": "Öňden hasabyňyz barmy?",
+    "login_here": "Şu ýerden giriň",
+    "create_new_account": "Täze hasap döretjek bolýarsyňyzmy?",
+    "click_here": "Şu ýere basyň"
   }
 }
