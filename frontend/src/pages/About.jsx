@@ -1,12 +1,18 @@
 // import React from 'react'
 import { assets } from "../assets/assets";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="text-center text-2xl pt-10 text-gray-500">
         <p>
-          ABOUT <span className="text-gray-700 font-medium">US</span>
+          {t("about.title_line1")}{" "}
+          <span className="text-gray-700 font-medium">
+            {t("about.title_line2")}
+          </span>
         </p>
       </div>
 
@@ -17,53 +23,34 @@ const About = () => {
           alt=""
         />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600">
-          <p>
-            Welcome to Prescripto, your trusted partner in managing your
-            healthcare needs
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            eligendi facilis vero in, aliquid vel pariatur cumque consectetur,
-            maxime alias quidem ab minus quibusdam hic nostrum eum reprehenderit
-            tempore nesciunt.
-          </p>
-          <b className="text-gray-800">Our vision</b>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus nemo facilis ut culpa! Amet in quod accusantium
-            incidunt?
-          </p>
+          <p>{t("about.intro")}</p>
+          <p>{t("about.description")}</p>
+          <b className="text-gray-800">{t("about.vision_title")}</b>
+          <p>{t("about.vision_text")}</p>
         </div>
       </div>
 
       <div className="text-xl my-4">
         <p>
-          WHY
-          <span className="text-gray-700 font-semibold">CHOOSE US</span>
+          {t("about.why_choose_title")}
+          <span className="text-gray-700 font-semibold">
+            {t("about.why_choose_title_span")}
+          </span>
         </p>
       </div>
 
       <div className="flex flex-col md:flex-row mb-20">
         <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer">
-          <b>Efficiency:</b>
-          <p>
-            Streamlined appointment scheduling that fits into your busy
-            lifestyle.
-          </p>
+          <b>{t("about.efficiency_title")}</b>
+          <p>{t("about.efficiency_text")}</p>
         </div>
         <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer">
-          <b>Convenience:</b>
-          <p>
-            Access to a network of trusted healthcare professionals in your
-            area.
-          </p>
+          <b>{t("about.convenience_title")}</b>
+          <p>{t("about.convenience_text")}</p>
         </div>
         <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer">
-          <b>Personalization:</b>
-          <p>
-            Tailored recommendations and reminders to help you stay on top your
-            health.
-          </p>
+          <b>{t("about.personalization_title")}</b>
+          <p>{t("about.personalization_text")}</p>
         </div>
       </div>
     </div>

@@ -55,5 +55,21 @@
     "available": "Available",
     "not_available": "Not Available",
     "more": "more"
+  },
+  "about": {
+    "title_line1": "ABOUT",
+    "title_line2": "US",
+    "intro": "Welcome to Sanly Saglyk, your trusted partner in managing your healthcare needs.",
+    "description": "Our mission is to make it easy for patients to connect with trusted doctors. Through our platform, you can book appointments and manage your health records anytime, anywhere.",
+    "vision_title": "Our vision",
+    "vision_text": "To ensure everyone has fast and easy access to quality healthcare, no matter where they live.",
+    "why_choose_title": "WHY",
+    "why_choose_title_span": "CHOOSE US",
+    "efficiency_title": "Efficiency:",
+    "efficiency_text": "Streamlined appointment scheduling that fits into your busy lifestyle.",
+    "convenience_title": "Convenience:",
+    "convenience_text": "Access to a network of trusted healthcare professionals in your area.",
+    "personalization_title": "Personalization:",
+    "personalization_text": "Tailored recommendations and reminders to help you stay on top of your health."
   }
 }

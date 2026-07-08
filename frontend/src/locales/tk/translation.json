@@ -55,5 +55,21 @@
     "available": "Boş wagt bar",
     "not_available": "Boş wagt ýok",
     "more": "Ýene görkez"
+  },
+  "about": {
+    "title_line1": "BIZ",
+    "title_line2": "BARADA",
+    "intro": "Sanly Saglyk-a hoş geldiňiz — saglyk hyzmatlaryňyzy dolandyrmakda ynamdar hyzmatdaşyňyz.",
+    "description": "Biziň maksadymyz, hassalar bilen ynamdar doktorlaryň arasyndaky aragatnaşygy aňsatlaşdyrmak. Platformamyz arkaly islendik wagt, islendik ýerden duşuşyk belläp, saglyk taryhyňyzy dolandyryp bilersiňiz.",
+    "vision_title": "Biziň maksadymyz",
+    "vision_text": "Her bir adamyň hil taýdan saglyk hyzmatyna aňsat we çalt elýeterliligini üpjün etmek — şäherde ýa-da welaýatda ýaşasyňyz-da tapawudy ýok.",
+    "why_choose_title": "NÄME ÜÇIN",
+    "why_choose_title_span": "BIZI SAÝLAMALY",
+    "efficiency_title": "Netijelilik:",
+    "efficiency_text": "Meşgul durmuşyňyza laýyk gelýän, ýönekeşdirilen duşuşyk bellemek ulgamy.",
+    "convenience_title": "Amatlylyk:",
+    "convenience_text": "Töwerekdäki ynamdar saglyk hünärmenleriniň giň toruna elýeterlilik.",
+    "personalization_title": "Şahsylaşdyrma:",
+    "personalization_text": "Saglygyňyzy yzarlamaga kömek edýän, size ýörite gabat gelýän maslahatlar we ýatlatmalar."
   }
 }
