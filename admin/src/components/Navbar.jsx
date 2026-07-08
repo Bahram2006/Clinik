@@ -1,14 +1,15 @@
 // import React from 'react'
-
 import { useContext } from "react";
 import { assets } from "../assets/assets";
 import { AdminContext } from "../context/AdminContext";
 import { useNavigate } from "react-router-dom";
 import { DoctorContext } from "../context/DoctorContext";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { aToken, setAtoken } = useContext(AdminContext);
   const { dToken, setDToken } = useContext(DoctorContext);
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -29,14 +30,14 @@ const Navbar = () => {
           alt=""
         />
         <p className="border px-2.5 py-0.5 rounded-full border-gray-500 text-gray-600">
-          {aToken ? "Admin" : "Doctor"}
+          {aToken ? t("navbar.admin") : t("navbar.doctor")}
         </p>
       </div>
       <button
         onClick={logout}
         className="bg-primary text-white text-sm px-10 py-2 rounded-full"
       >
-        Logout
+        {t("navbar.logout")}
       </button>
     </div>
   );

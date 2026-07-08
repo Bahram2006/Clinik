@@ -1,0 +1,7 @@
+{
+  "navbar": {
+    "admin": "Admin",
+    "doctor": "Doctor",
+    "logout": "Logout"
+  }
+}
