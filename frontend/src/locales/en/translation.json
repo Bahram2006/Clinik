@@ -71,5 +71,21 @@
     "convenience_text": "Access to a network of trusted healthcare professionals in your area.",
     "personalization_title": "Personalization:",
     "personalization_text": "Tailored recommendations and reminders to help you stay on top of your health."
+  },
+  "appointment": {
+    "days": {
+      "sun": "SUN",
+      "mon": "MON",
+      "tue": "TUE",
+      "wed": "WED",
+      "thu": "THU",
+      "fri": "FRI",
+      "sat": "SAT"
+    },
+    "about": "About",
+    "appointment_fee": "Appointment fee:",
+    "booking_slots": "Booking slots",
+    "book_button": "Book an appointment",
+    "login_warning": "Login to book appointment"
   }
 }

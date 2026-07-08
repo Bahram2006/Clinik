@@ -71,5 +71,21 @@
     "convenience_text": "Töwerekdäki ynamdar saglyk hünärmenleriniň giň toruna elýeterlilik.",
     "personalization_title": "Şahsylaşdyrma:",
     "personalization_text": "Saglygyňyzy yzarlamaga kömek edýän, size ýörite gabat gelýän maslahatlar we ýatlatmalar."
+  },
+  "appointment": {
+    "days": {
+      "sun": "Ýek",
+      "mon": "Duş",
+      "tue": "Siş",
+      "wed": "Çar",
+      "thu": "Pen",
+      "fri": "Ann",
+      "sat": "Şen"
+    },
+    "about": "Barada",
+    "appointment_fee": "Duşuşyk tölegi:",
+    "booking_slots": "Boş wagtlar",
+    "book_button": "Duşuşyk bellemek",
+    "login_warning": "Duşuşyk bellemek üçin ilki giriň"
   }
 }
