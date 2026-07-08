@@ -99,5 +99,9 @@
     "careers_title": "Careers at Sanly Saglyk",
     "careers_text": "Learn more about our teams and job openings.",
     "explore_jobs": "Explore Jobs."
+  },
+  "doctors_page": {
+    "browse": "Browse through the doctors specialist.",
+    "filters": "Filters"
   }
 }
