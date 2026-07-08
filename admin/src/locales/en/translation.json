@@ -3,5 +3,12 @@
     "admin": "Admin",
     "doctor": "Doctor",
     "logout": "Logout"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "appointments": "Appointments",
+    "add_doctor": "Add Doctor",
+    "doctor_list": "Doctor List",
+    "profile": "Profile"
   }
 }

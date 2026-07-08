@@ -3,5 +3,12 @@
     "admin": "Admin",
     "doctor": "Doktor",
     "logout": "Çykmak"
+  },
+  "sidebar": {
+    "dashboard": "Dolandyryş paneli",
+    "appointments": "Duşuşyklar",
+    "add_doctor": "Doktor goşmak",
+    "doctor_list": "Doktorlaryň sanawy",
+    "profile": "Profil"
   }
 }
