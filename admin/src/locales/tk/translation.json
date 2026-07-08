@@ -10,5 +10,35 @@
     "add_doctor": "Doktor goşmak",
     "doctor_list": "Doktorlaryň sanawy",
     "profile": "Profil"
+  },
+  "add_doctor": {
+    "title": "Doktor goşmak",
+    "upload_picture": "Doktoryň suratyny ýükläň",
+    "doctor_name": "Doktoryň ady",
+    "name_placeholder": "Ady",
+    "doctor_email": "Doktoryň emaily",
+    "doctor_password": "Doktoryň paroly",
+    "experience": "Tejribe",
+    "fees": "Töleg",
+    "fees_placeholder": "töleg",
+    "speciality": "Hünär",
+    "education": "Bilim",
+    "education_placeholder": "Bilim",
+    "address": "Salgy",
+    "address1_placeholder": "salgy 1",
+    "address2_placeholder": "salgy 2",
+    "about_doctor": "Doktor barada",
+    "about_placeholder": "Doktor barada ýazyň",
+    "submit": "Doktor goşmak",
+    "image_not_selected": "Surat saýlanmady",
+    "years": "Ýyl"
+  },
+  "specialities": {
+    "General physician": "Umumy lukman",
+    "Gynecologist": "Ginekolog",
+    "Dermatologist": "Deri lukmany",
+    "Pediatricians": "Çaga lukmany",
+    "Neurologist": "Newropatolog",
+    "Gastroenterologist": "Aşgazan-içege lukmany"
   }
 }

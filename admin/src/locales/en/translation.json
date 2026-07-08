@@ -10,5 +10,35 @@
     "add_doctor": "Add Doctor",
     "doctor_list": "Doctor List",
     "profile": "Profile"
+  },
+  "add_doctor": {
+    "title": "Add Doctor",
+    "upload_picture": "Upload doctor picture",
+    "doctor_name": "Doctor name",
+    "name_placeholder": "Name",
+    "doctor_email": "Doctor Email",
+    "doctor_password": "Doctor Password",
+    "experience": "Experience",
+    "fees": "Fees",
+    "fees_placeholder": "fees",
+    "speciality": "Speciality",
+    "education": "Education",
+    "education_placeholder": "Education",
+    "address": "Address",
+    "address1_placeholder": "address 1",
+    "address2_placeholder": "address 2",
+    "about_doctor": "About Doctor",
+    "about_placeholder": "write about doctor",
+    "submit": "Add Doctor",
+    "image_not_selected": "Image Not Selected",
+    "years": "Year"
+  },
+  "specialities": {
+    "General physician": "General physician",
+    "Gynecologist": "Gynecologist",
+    "Dermatologist": "Dermatologist",
+    "Pediatricians": "Pediatricians",
+    "Neurologist": "Neurologist",
+    "Gastroenterologist": "Gastroenterologist"
   }
 }

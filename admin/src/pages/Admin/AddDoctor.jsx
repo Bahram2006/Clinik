@@ -1,12 +1,36 @@
 // import React from 'react'
-
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../context/AdminContext";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+
+const specialityList = [
+  "General physician",
+  "Gynecologist",
+  "Dermatologist",
+  "Pediatricians",
+  "Neurologist",
+  "Gastroenterologist",
+];
+
+const experienceList = [
+  "1 Year",
+  "2 Year",
+  "3 Year",
+  "4 Year",
+  "5 Year",
+  "6 Year",
+  "7 Year",
+  "8 Year",
+  "9 Year",
+  "10 Year",
+];
 
 const AddDoctor = () => {
+  const { t } = useTranslation();
+
   const [docImg, setDocImg] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +50,7 @@ const AddDoctor = () => {
 
     try {
       if (!docImg) {
-        return toast.error("Image Not Selected");
+        return toast.error(t("add_doctor.image_not_selected"));
       }
 
       const formData = new FormData();
@@ -45,7 +69,6 @@ const AddDoctor = () => {
         JSON.stringify({ line1: address1, line2: address2 }),
       );
 
-      // console log formdata
       formData.forEach((value, key) => {
         console.log(`${key} : ${value}`);
       });
@@ -60,10 +83,10 @@ const AddDoctor = () => {
         toast.success(data.message);
         setDocImg(false);
         setName("");
-        setEmail(""); // <-- Şu setiri goşuň!
+        setEmail("");
         setPassword("");
         setAddress1("");
-        setAddress2(""); // <-- Şu setiri goşuň!
+        setAddress2("");
         setFees("");
       } else {
         toast.error(data.message);
@@ -76,7 +99,7 @@ const AddDoctor = () => {
 
   return (
     <form onSubmit={onSubmitHandler} className="m-5 w-full">
-      <p className="mb-3 text-lg font-medium">Add Doctor</p>
+      <p className="mb-3 text-lg font-medium">{t("add_doctor.title")}</p>
 
       <div className="bg-white px-8 py-8 border rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll">
         <div className="flex items-center gap-4 mb-8 text-gray-500">
@@ -93,27 +116,25 @@ const AddDoctor = () => {
             id="doc-img"
             hidden
           />
-          <p>
-            Upload doctor <br /> picture
-          </p>
+          <p>{t("add_doctor.upload_picture")}</p>
         </div>
 
         <div className="flex flex-col lg:flex-row items-start gap-10 text-gray-600">
           <div className="w-full lg:flex-1 flex flex-col gap-4">
             <div className="flex-1 flex flex-col gap-1">
-              <p>Doctor name</p>
+              <p>{t("add_doctor.doctor_name")}</p>
               <input
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 className="border rounded px-3 py-2"
                 type="text"
-                placeholder="Name"
+                placeholder={t("add_doctor.name_placeholder")}
                 required
               />
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Doctor Email</p>
+              <p>{t("add_doctor.doctor_email")}</p>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -125,7 +146,7 @@ const AddDoctor = () => {
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Doctor Password</p>
+              <p>{t("add_doctor.doctor_password")}</p>
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
@@ -137,35 +158,28 @@ const AddDoctor = () => {
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Experience</p>
+              <p>{t("add_doctor.experience")}</p>
               <select
                 onChange={(e) => setExperience(e.target.value)}
                 value={experience}
                 className="border rounded px-3 py-2"
-                name=""
-                id=""
               >
-                <option value="1 Year">1 Year</option>
-                <option value="2 Year">2 Year</option>
-                <option value="3 Year">3 Year</option>
-                <option value="4 Year">4 Year</option>
-                <option value="5 Year">5 Year</option>
-                <option value="6 Year">6 Year</option>
-                <option value="7 Year">7 Year</option>
-                <option value="8 Year">8 Year</option>
-                <option value="9 Year">9 Year</option>
-                <option value="10 Year">10 Year</option>
+                {experienceList.map((exp) => (
+                  <option key={exp} value={exp}>
+                    {exp.split(" ")[0]} {t("add_doctor.years")}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Fees</p>
+              <p>{t("add_doctor.fees")}</p>
               <input
                 onChange={(e) => setFees(e.target.value)}
                 value={fees}
                 className="border rounded px-3 py-2"
                 type="number"
-                placeholder="fees"
+                placeholder={t("add_doctor.fees_placeholder")}
                 required
               />
             </div>
@@ -173,43 +187,40 @@ const AddDoctor = () => {
 
           <div className="w-full lg:flex-1 flex flex-col gap-4">
             <div className="flex-1 flex flex-col gap-1">
-              <p>Speciality</p>
+              <p>{t("add_doctor.speciality")}</p>
               <select
                 onChange={(e) => setSpeciality(e.target.value)}
                 value={speciality}
                 className="border rounded px-3 py-2"
-                name=""
-                id=""
               >
-                <option value="General physician">General physician</option>
-                <option value="Gynecologist">Gynecologist</option>
-                <option value="Dermatologist">Dermatologist</option>
-                <option value="Pediatricians">Pediatricians</option>
-                <option value="Neurologist">Neurologist</option>
-                <option value="Gastroenterologist">Gastroenterologist</option>
+                {specialityList.map((spec) => (
+                  <option key={spec} value={spec}>
+                    {t(`specialities.${spec}`, spec)}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Education</p>
+              <p>{t("add_doctor.education")}</p>
               <input
                 onChange={(e) => setDegree(e.target.value)}
                 value={degree}
                 className="border rounded px-3 py-2"
                 type="text"
-                placeholder="Education"
+                placeholder={t("add_doctor.education_placeholder")}
                 required
               />
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Address</p>
+              <p>{t("add_doctor.address")}</p>
               <input
                 onChange={(e) => setAddress1(e.target.value)}
                 value={address1}
                 className="border rounded px-3 py-2"
                 type="text"
-                placeholder="address 1"
+                placeholder={t("add_doctor.address1_placeholder")}
                 required
               />
               <input
@@ -217,7 +228,7 @@ const AddDoctor = () => {
                 value={address2}
                 className="border rounded px-3 py-2"
                 type="text"
-                placeholder="address 2"
+                placeholder={t("add_doctor.address2_placeholder")}
                 required
               />
             </div>
@@ -225,12 +236,12 @@ const AddDoctor = () => {
         </div>
 
         <div>
-          <p className="mt-4 mb-2">About Doctor</p>
+          <p className="mt-4 mb-2">{t("add_doctor.about_doctor")}</p>
           <textarea
             onChange={(e) => setAbout(e.target.value)}
             value={about}
             className="w-full px-4 pt-2 border rounded"
-            placeholder="write about doctor"
+            placeholder={t("add_doctor.about_placeholder")}
             rows={5}
             required
           />
@@ -240,7 +251,7 @@ const AddDoctor = () => {
           type="submit"
           className="bg-primary px-10 py-3 mt-4 text-white rounded-full"
         >
-          Add Doctor
+          {t("add_doctor.submit")}
         </button>
       </div>
     </form>
