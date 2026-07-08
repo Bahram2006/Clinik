@@ -23,5 +23,18 @@
     "title_line1": "Book Appointment",
     "title_line2": "With 100+ Trusted Doctors",
     "create_account": "Create account"
+  },
+  "header": {
+    "title_line1": "Book Appointment",
+    "title_line2": "With Trusted Doctors",
+    "description": "Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.",
+    "book_appointment": "Book appointment"
+  },
+  "related_doctors": {
+    "title": "Top Doctors to Book",
+    "description": "Simply browse through our extensive list of trusted doctors.",
+    "available": "Available",
+    "not_available": "Not Available",
+    "more": "more"
   }
 }

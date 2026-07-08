@@ -23,5 +23,18 @@
     "title_line1": "Duşuşyk belläň",
     "title_line2": "100+ ynamdar doktor bilen",
     "create_account": "Hasap döretmek"
+  },
+  "header": {
+    "title_line1": "Duşuşyk belläň",
+    "title_line2": "Ynamdar doktorlar bilen",
+    "description": "Ynamdar doktorlarymyzyň giň sanawyna göz aýlaň, duşuşygyňyzy aňsatlyk bilen belläň.",
+    "book_appointment": "Duşuşyk bellemek"
+  },
+  "related_doctors": {
+    "title": "Ilki Bellemeli Doktorlar",
+    "description": "Ynamdar doktorlarymyzyň giň sanawyna göz aýlaň.",
+    "available": "Boş wagt bar",
+    "not_available": "Boş wagt ýok",
+    "more": "Ýene görkez"
   }
 }
