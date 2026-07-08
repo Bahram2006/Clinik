@@ -40,5 +40,16 @@
     "Pediatricians": "Pediatricians",
     "Neurologist": "Neurologist",
     "Gastroenterologist": "Gastroenterologist"
+  },
+  "all_appointments": {
+    "title": "All Appointments",
+    "patient": "Patient",
+    "age": "Age",
+    "date_time": "Date & Time",
+    "doctor": "Doctor",
+    "fees": "Fees",
+    "actions": "Actions",
+    "cancelled": "Cancelled",
+    "completed": "Completed"
   }
 }

@@ -40,5 +40,16 @@
     "Pediatricians": "Çaga lukmany",
     "Neurologist": "Newropatolog",
     "Gastroenterologist": "Aşgazan-içege lukmany"
+  },
+  "all_appointments": {
+    "title": "Ähli Duşuşyklar",
+    "patient": "Hassa",
+    "age": "Ýaşy",
+    "date_time": "Sene we wagt",
+    "doctor": "Doktor",
+    "fees": "Töleg",
+    "actions": "Hereketler",
+    "cancelled": "Ýatyryldy",
+    "completed": "Tamamlandy"
   }
 }

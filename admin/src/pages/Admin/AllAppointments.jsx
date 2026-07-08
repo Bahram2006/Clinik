@@ -1,15 +1,16 @@
 // import React from 'react'
-
 import { useContext } from "react";
 import { AdminContext } from "../../context/AdminContext";
 import { useEffect } from "react";
 import { AppContext } from "../../context/AppContext";
 import { assets } from "../../assets/assets";
+import { useTranslation } from "react-i18next";
 
 const AllAppointments = () => {
   const { aToken, appointments, getAllAppointments, cancelAppointment } =
     useContext(AdminContext);
   const { calculateAge, slotDateFormat, currency } = useContext(AppContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (aToken) {
@@ -19,17 +20,17 @@ const AllAppointments = () => {
 
   return (
     <div className="w-full max-w-6xl m-5">
-      <p className="mb-3 text-lg font-medium">All Appointments</p>
+      <p className="mb-3 text-lg font-medium">{t("all_appointments.title")}</p>
 
       <div className="bg-white border rounded text-sm max-h-[80vh] min-h-[60vh] overflow-y-scroll">
         <div className="hidden sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] grid-flow-col py-3 px-6 border-b">
           <p>#</p>
-          <p>Patient</p>
-          <p>Age</p>
-          <p>Date & Time</p>
-          <p>Doctor</p>
-          <p>Fees</p>
-          <p>Actions</p>
+          <p>{t("all_appointments.patient")}</p>
+          <p>{t("all_appointments.age")}</p>
+          <p>{t("all_appointments.date_time")}</p>
+          <p>{t("all_appointments.doctor")}</p>
+          <p>{t("all_appointments.fees")}</p>
+          <p>{t("all_appointments.actions")}</p>
         </div>
 
         {appointments.map((item, index) => (
@@ -46,7 +47,9 @@ const AllAppointments = () => {
               />{" "}
               <p>{item.userData.name}</p>
             </div>
-            <p className="max-sm:hidden">{calculateAge(item.userData.dob)}</p>
+            <p className="max-sm:hidden">
+              {calculateAge(item.userData.dob)}
+            </p>
             <p>
               {slotDateFormat(item.slotDate)}, {item.slotTime}
             </p>
@@ -63,9 +66,13 @@ const AllAppointments = () => {
               {item.amount}
             </p>
             {item.cancelled ? (
-              <p className="text-red-400 text-xs font-medium">Cancelled</p>
+              <p className="text-red-400 text-xs font-medium">
+                {t("all_appointments.cancelled")}
+              </p>
             ) : item.isCompleted ? (
-              <p className="text-green-500 text-xs font-medium">Completed</p>
+              <p className="text-green-500 text-xs font-medium">
+                {t("all_appointments.completed")}
+              </p>
             ) : (
               <img
                 onClick={() => cancelAppointment(item._id)}
