@@ -116,5 +116,16 @@
     "login_here": "Şu ýerden giriň",
     "create_new_account": "Täze hasap döretjek bolýarsyňyzmy?",
     "click_here": "Şu ýere basyň"
+  },
+  "my_appointments": {
+    "title": "Meniň duşuşyklarym",
+    "address": "Salgy:",
+    "date_time": "Sene we wagt:",
+    "paid": "Tölendi",
+    "pay_online": "Onlaýn töle",
+    "cancel": "Duşuşygy ýatyr",
+    "cancelled": "Duşuşyk ýatyryldy",
+    "completed": "Tamamlandy",
+    "months": ["", "Ýan", "Few", "Mart", "Apr", "Maý", "Iýun", "Iýul", "Awg", "Sen", "Okt", "Noý", "Dek"]
   }
 }

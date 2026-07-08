@@ -116,5 +116,16 @@
     "login_here": "Login here",
     "create_new_account": "Create an new account?",
     "click_here": "click here"
+  },
+  "my_appointments": {
+    "title": "My appointments",
+    "address": "Address:",
+    "date_time": "Date & Time:",
+    "paid": "Paid",
+    "pay_online": "Pay Online",
+    "cancel": "Cancel appointment",
+    "cancelled": "Appointment cancelled",
+    "completed": "Completed",
+    "months": ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   }
 }
