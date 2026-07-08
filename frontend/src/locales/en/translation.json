@@ -48,5 +48,12 @@
     "Pediatricians": "Pediatricians",
     "Neurologist": "Neurologist",
     "Gastroenterologist": "Gastroenterologist"
+  },
+  "top_doctors": {
+    "title": "Top Doctors to Book",
+    "description": "Simply browse through our extensive list of trusted doctors.",
+    "available": "Available",
+    "not_available": "Not Available",
+    "more": "more"
   }
 }

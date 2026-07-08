@@ -48,5 +48,12 @@
     "Pediatricians": "Çaga lukmany",
     "Neurologist": "Newropatolog",
     "Gastroenterologist": "Aşgazan-içege lukmany"
+  },
+  "top_doctors": {
+    "title": "Ilki Bellemeli Doktorlar",
+    "description": "Ynamdar doktorlarymyzyň giň sanawyna göz aýlaň.",
+    "available": "Boş wagt bar",
+    "not_available": "Boş wagt ýok",
+    "more": "Ýene görkez"
   }
 }
