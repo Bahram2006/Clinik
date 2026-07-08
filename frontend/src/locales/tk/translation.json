@@ -36,5 +36,17 @@
     "available": "Boş wagt bar",
     "not_available": "Boş wagt ýok",
     "more": "Ýene görkez"
+  },
+  "speciality_menu": {
+    "title": "Hünär boýunça gözlemek",
+    "description": "Ynamdar doktorlarymyzyň giň sanawyna göz aýlaň, duşuşygyňyzy aňsatlyk bilen belläň."
+  },
+  "specialities": {
+    "General physician": "Umumy lukman",
+    "Gynecologist": "Ginekolog",
+    "Dermatologist": "Deri lukmany",
+    "Pediatricians": "Çaga lukmany",
+    "Neurologist": "Newropatolog",
+    "Gastroenterologist": "Aşgazan-içege lukmany"
   }
 }

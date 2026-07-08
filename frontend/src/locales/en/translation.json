@@ -36,5 +36,17 @@
     "available": "Available",
     "not_available": "Not Available",
     "more": "more"
+  },
+  "speciality_menu": {
+    "title": "Find by Speciality",
+    "description": "Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free."
+  },
+  "specialities": {
+    "General physician": "General physician",
+    "Gynecologist": "Gynecologist",
+    "Dermatologist": "Dermatologist",
+    "Pediatricians": "Pediatricians",
+    "Neurologist": "Neurologist",
+    "Gastroenterologist": "Gastroenterologist"
   }
 }
