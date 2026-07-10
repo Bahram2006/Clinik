@@ -67,6 +67,14 @@ const Navbar = () => {
         >
           EN
         </button>
+        <button
+          onClick={() => changeLanguage("ru")}
+          className={`px-3 py-1 rounded-full transition-all ${
+            i18n.language === "ru" ? "bg-primary text-white" : "text-gray-500"
+          }`}
+        >
+          RU
+        </button>
       </div>
 
       <div className="flex items-center gap-4">
@@ -158,6 +166,16 @@ const Navbar = () => {
                 }`}
               >
                 EN
+              </button>
+              <button
+                onClick={() => changeLanguage("ru")}
+                className={`px-4 py-1 rounded-full transition-all ${
+                  i18n.language === "ru"
+                    ? "bg-primary text-white"
+                    : "text-gray-500"
+                }`}
+              >
+                RU
               </button>
             </div>
           </ul>
