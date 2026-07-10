@@ -140,5 +140,24 @@
     "birthday_label": "Doglan güni:",
     "save": "Saklamak",
     "edit": "Üýtgetmek"
+  },
+  "errors": {
+    "MISSING_DETAILS": "Maglumatlar ýetmezçilik edýär",
+    "INVALID_EMAIL": "Dogry email giriziň",
+    "WEAK_PASSWORD": "Güýçli parol giriziň (azyndan 8 belgi)",
+    "USER_NOT_FOUND": "Ulanyjy tapylmady",
+    "INVALID_CREDENTIALS": "Email ýa-da parol ýalňyş",
+    "PROFILE_UPDATED": "Profil täzelendi",
+    "DATA_MISSING": "Maglumat ýetmezçilik edýär",
+    "DOCTOR_NOT_AVAILABLE": "Doktor häzir elýeterli däl",
+    "SLOT_NOT_AVAILABLE": "Bu wagt eýýäm bellenen",
+    "APPOINTMENT_BOOKED": "Duşuşyk bellenildi",
+    "APPOINTMENT_CANCELLED": "Duşuşyk ýatyryldy",
+    "UNAUTHORIZED_ACTION": "Rugsat berilmedik hereket",
+    "APPOINTMENT_CANCELLED_OR_NOT_FOUND": "Duşuşyk ýatyrylan ýa-da tapylmady",
+    "PAYMENT_SUCCESSFUL": "Töleg üstünlikli geçirildi",
+    "PAYMENT_FAILED": "Töleg şowsuz boldy",
+    "SERVER_ERROR": "Serwerde ýalňyşlyk ýüze çykdy",
+    "NETWORK_ERROR": "Internet arabaglanyşygy ýok ýa-da serwer elýeterli däl"
   }
 }

@@ -140,5 +140,24 @@
     "birthday_label": "Дата рождения:",
     "save": "Сохранить",
     "edit": "Редактировать"
+  },
+  "errors": {
+    "MISSING_DETAILS": "Не заполнены обязательные поля",
+    "INVALID_EMAIL": "Введите правильный email",
+    "WEAK_PASSWORD": "Введите надёжный пароль (минимум 8 символов)",
+    "USER_NOT_FOUND": "Пользователь не найден",
+    "INVALID_CREDENTIALS": "Неверный email или пароль",
+    "PROFILE_UPDATED": "Профиль обновлён",
+    "DATA_MISSING": "Отсутствуют данные",
+    "DOCTOR_NOT_AVAILABLE": "Врач сейчас недоступен",
+    "SLOT_NOT_AVAILABLE": "Это время уже занято",
+    "APPOINTMENT_BOOKED": "Запись создана",
+    "APPOINTMENT_CANCELLED": "Запись отменена",
+    "UNAUTHORIZED_ACTION": "Действие не разрешено",
+    "APPOINTMENT_CANCELLED_OR_NOT_FOUND": "Запись отменена или не найдена",
+    "PAYMENT_SUCCESSFUL": "Оплата прошла успешно",
+    "PAYMENT_FAILED": "Оплата не удалась",
+    "SERVER_ERROR": "Произошла ошибка сервера",
+    "NETWORK_ERROR": "Нет подключения к интернету или сервер недоступен"
   }
 }

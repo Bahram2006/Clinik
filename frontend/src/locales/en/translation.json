@@ -140,5 +140,24 @@
     "birthday_label": "Birthday:",
     "save": "Save information",
     "edit": "Edit"
+  },
+  "errors": {
+    "MISSING_DETAILS": "Missing Details",
+    "INVALID_EMAIL": "Enter a valid email",
+    "WEAK_PASSWORD": "Enter a strong password (at least 8 characters)",
+    "USER_NOT_FOUND": "User does not exist",
+    "INVALID_CREDENTIALS": "Invalid Credentials",
+    "PROFILE_UPDATED": "Profile Updated",
+    "DATA_MISSING": "Data Missing",
+    "DOCTOR_NOT_AVAILABLE": "Doctor not available",
+    "SLOT_NOT_AVAILABLE": "Slot not available",
+    "APPOINTMENT_BOOKED": "Appointment Booked",
+    "APPOINTMENT_CANCELLED": "Appointment Cancelled",
+    "UNAUTHORIZED_ACTION": "Unauthorized action",
+    "APPOINTMENT_CANCELLED_OR_NOT_FOUND": "Appointment Cancelled or not found",
+    "PAYMENT_SUCCESSFUL": "Payment Successful",
+    "PAYMENT_FAILED": "Payment failed",
+    "SERVER_ERROR": "A server error occurred",
+    "NETWORK_ERROR": "No internet connection or server is unreachable"
   }
 }

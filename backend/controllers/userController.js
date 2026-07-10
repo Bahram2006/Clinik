@@ -6,6 +6,7 @@ import { v2 as cloudinary } from "cloudinary";
 import doctorModel from "../models/doctorModel.js";
 import appointmentModel from "../models/appointmentModel.js";
 import razorpay from "razorpay";
+import ErrorCodes from "../constants/errorCodes.js";
 
 // API to register user
 const registerUser = async (req, res) => {
@@ -13,17 +14,29 @@ const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
 
     if (!name || !password || !email) {
-      return res.json({ success: false, message: "Missing Details" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.MISSING_DETAILS,
+        message: "Missing Details",
+      });
     }
 
     // validating email format
     if (!validator.isEmail(email)) {
-      return res.json({ success: false, message: "enter a valid email" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.INVALID_EMAIL,
+        message: "enter a valid email",
+      });
     }
 
     // validating strong password
     if (password.length < 8) {
-      return res.json({ success: false, message: "enter a strong password" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.WEAK_PASSWORD,
+        message: "enter a strong password",
+      });
     }
 
     // hashing user password
@@ -44,7 +57,11 @@ const registerUser = async (req, res) => {
     res.json({ success: true, token });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -55,7 +72,11 @@ const loginUser = async (req, res) => {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.json({ success: false, message: "User does not exist" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.USER_NOT_FOUND,
+        message: "User does not exist",
+      });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -64,11 +85,19 @@ const loginUser = async (req, res) => {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       res.json({ success: true, token });
     } else {
-      res.json({ success: false, message: "Invalid Credentials" });
+      res.json({
+        success: false,
+        errorCode: ErrorCodes.INVALID_CREDENTIALS,
+        message: "Invalid Credentials",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -81,7 +110,11 @@ const getProfile = async (req, res) => {
     res.json({ success: true, userData });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -92,7 +125,11 @@ const updateProfile = async (req, res) => {
     const imageFile = req.file;
 
     if (!name || !phone || !dob || !gender) {
-      return res.json({ success: false, message: "Data Missing" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.DATA_MISSING,
+        message: "Data Missing",
+      });
     }
 
     await userModel.findByIdAndUpdate(userId, {
@@ -113,10 +150,18 @@ const updateProfile = async (req, res) => {
       await userModel.findByIdAndUpdate(userId, { image: imageURL });
     }
 
-    res.json({ success: true, message: "Profile Updated" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.PROFILE_UPDATED,
+      message: "Profile Updated",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -128,7 +173,11 @@ const bookAppointment = async (req, res) => {
     const docData = await doctorModel.findById(docId).select("-password");
 
     if (!docData.available) {
-      return res.json({ success: false, message: "Doctor not available" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.DOCTOR_NOT_AVAILABLE,
+        message: "Doctor not available",
+      });
     }
 
     let slots_booked = docData.slots_booked;
@@ -136,7 +185,11 @@ const bookAppointment = async (req, res) => {
     // checking for slot availability
     if (slots_booked[slotDate]) {
       if (slots_booked[slotDate].includes(slotTime)) {
-        return res.json({ success: false, message: "Slot not available" });
+        return res.json({
+          success: false,
+          errorCode: ErrorCodes.SLOT_NOT_AVAILABLE,
+          message: "Slot not available",
+        });
       } else {
         slots_booked[slotDate].push(slotTime);
       }
@@ -166,10 +219,18 @@ const bookAppointment = async (req, res) => {
     // save new slots data in docData
     await doctorModel.findByIdAndUpdate(docId, { slots_booked });
 
-    res.json({ success: true, message: "Appointment Booked" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.APPOINTMENT_BOOKED,
+      message: "Appointment Booked",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -182,7 +243,11 @@ const listAppointment = async (req, res) => {
     res.json({ success: true, appointments });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -195,7 +260,11 @@ const cancelAppointment = async (req, res) => {
 
     // verify appointment user
     if (appointmentData.userId !== userId) {
-      return res.json({ success: false, message: "Unauthorized action" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.UNAUTHORIZED_ACTION,
+        message: "Unauthorized action",
+      });
     }
 
     await appointmentModel.findByIdAndUpdate(appointmentId, {
@@ -214,12 +283,20 @@ const cancelAppointment = async (req, res) => {
       (e) => e !== slotTime,
     );
 
-    (await doctorModel, findByIdAndUpdate(docId, { slots_booked }));
+    await doctorModel.findByIdAndUpdate(docId, { slots_booked });
 
-    res.json({ success: true, message: "Appointment Cancelled" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.APPOINTMENT_CANCELLED,
+      message: "Appointment Cancelled",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -237,6 +314,7 @@ const paymentRazorpay = async (req, res) => {
     if (!appointmentData || appointmentData.cancelled) {
       return res.json({
         success: false,
+        errorCode: ErrorCodes.APPOINTMENT_CANCELLED_OR_NOT_FOUND,
         message: "Appointment Cancelled or not found",
       });
     }
@@ -254,7 +332,11 @@ const paymentRazorpay = async (req, res) => {
     res.json({ success: true, order });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -268,13 +350,25 @@ const verifyRazorpay = async (req, res) => {
       await appointmentModel.findByIdAndUpdate(orderInfo.receipt, {
         payment: true,
       });
-      res.json({ success: true, message: "Payment Successful" });
+      res.json({
+        success: true,
+        errorCode: ErrorCodes.PAYMENT_SUCCESSFUL,
+        message: "Payment Successful",
+      });
     } else {
-      res.json({ success: false, message: "Payment failed" });
+      res.json({
+        success: false,
+        errorCode: ErrorCodes.PAYMENT_FAILED,
+        message: "Payment failed",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 

@@ -5,6 +5,7 @@ import doctorModel from "../models/doctorModel.js";
 import jwt from "jsonwebtoken";
 import appointmentModel from "../models/appointmentModel.js";
 import userModel from "../models/userModel.js";
+import ErrorCodes from "../constants/errorCodes.js";
 
 // API for adding doctor
 const addDoctor = async (req, res) => {
@@ -34,13 +35,18 @@ const addDoctor = async (req, res) => {
       !fees ||
       !address
     ) {
-      return res.json({ success: false, message: "Missing Details" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.MISSING_DETAILS,
+        message: "Missing Details",
+      });
     }
 
     //  validating email format
     if (!validator.isEmail(email)) {
       return res.json({
         success: false,
+        errorCode: ErrorCodes.INVALID_EMAIL,
         message: "Please enter a valid email",
       });
     }
@@ -49,6 +55,7 @@ const addDoctor = async (req, res) => {
     if (password.length < 8) {
       return res.json({
         success: false,
+        errorCode: ErrorCodes.WEAK_PASSWORD,
         message: "Please enter a strong password",
       });
     }
@@ -80,10 +87,18 @@ const addDoctor = async (req, res) => {
     const newDoctor = new doctorModel(doctorData);
     await newDoctor.save();
 
-    res.json({ success: true, message: "Doctor Added" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.DOCTOR_ADDED,
+      message: "Doctor Added",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -99,11 +114,19 @@ const loginAdmin = async (req, res) => {
       const token = jwt.sign(email + password, process.env.JWT_SECRET);
       res.json({ success: true, token });
     } else {
-      res.json({ success: false, message: "Invalid credentials" });
+      res.json({
+        success: false,
+        errorCode: ErrorCodes.INVALID_CREDENTIALS,
+        message: "Invalid credentials",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -114,7 +137,11 @@ const allDoctors = async (req, res) => {
     res.json({ success: true, doctors });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -125,11 +152,14 @@ const appointmentsAdmin = async (req, res) => {
     res.json({ success: true, appointments });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
-// API  for appointment  cancellation
 // API  for appointment  cancellation
 const appointmentCancel = async (req, res) => {
   try {
@@ -153,13 +183,20 @@ const appointmentCancel = async (req, res) => {
       (e) => e !== slotTime,
     );
 
-    // DOGRY KOD: Otur (,) nokat (.) bilen çalyşyldy we 'I' harpy uly ýazyldy
     await doctorModel.findByIdAndUpdate(docId, { slots_booked });
 
-    res.json({ success: true, message: "Appointment Cancelled" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.APPOINTMENT_CANCELLED,
+      message: "Appointment Cancelled",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -180,7 +217,11 @@ const adminDashboard = async (req, res) => {
     res.json({ success: true, dashData });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 

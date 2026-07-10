@@ -2,6 +2,7 @@ import doctorModel from "../models/doctorModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import appointmentModel from "../models/appointmentModel.js";
+import ErrorCodes from "../constants/errorCodes.js";
 
 const changeAvailability = async (req, res) => {
   try {
@@ -11,10 +12,18 @@ const changeAvailability = async (req, res) => {
     await doctorModel.findByIdAndUpdate(docId, {
       available: !docData.available,
     });
-    res.json({ success: true, message: "Availability Changed" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.AVAILABILITY_CHANGED,
+      message: "Availability Changed",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -25,7 +34,11 @@ const doctorList = async (req, res) => {
     res.json({ success: true, doctors });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -36,7 +49,11 @@ const loginDoctor = async (req, res) => {
     const doctor = await doctorModel.findOne({ email });
 
     if (!doctor) {
-      return res.json({ success: false, message: "Invalid credentials" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.INVALID_CREDENTIALS,
+        message: "Invalid credentials",
+      });
     }
 
     const isMatch = await bcrypt.compare(password, doctor.password);
@@ -45,11 +62,19 @@ const loginDoctor = async (req, res) => {
       const token = jwt.sign({ id: doctor._id }, process.env.JWT_SECRET);
       res.json({ success: true, token });
     } else {
-      res.json({ success: false, message: "Invalid credentials" });
+      res.json({
+        success: false,
+        errorCode: ErrorCodes.INVALID_CREDENTIALS,
+        message: "Invalid credentials",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -62,7 +87,11 @@ const appointmentsDoctor = async (req, res) => {
     res.json({ success: true, appointments });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -77,13 +106,25 @@ const appointmentComplete = async (req, res) => {
       await appointmentModel.findByIdAndUpdate(appointmentId, {
         isCompleted: true,
       });
-      return res.json({ success: true, message: "Appointment Completed" });
+      return res.json({
+        success: true,
+        errorCode: ErrorCodes.APPOINTMENT_COMPLETED,
+        message: "Appointment Completed",
+      });
     } else {
-      return res.json({ success: false, message: "Mark Failed" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.MARK_FAILED,
+        message: "Mark Failed",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -98,13 +139,25 @@ const appointmentCancel = async (req, res) => {
       await appointmentModel.findByIdAndUpdate(appointmentId, {
         cancelled: true,
       });
-      return res.json({ success: true, message: "Appointment Cancelled" });
+      return res.json({
+        success: true,
+        errorCode: ErrorCodes.APPOINTMENT_CANCELLED,
+        message: "Appointment Cancelled",
+      });
     } else {
-      return res.json({ success: false, message: "Cancellation Failed" });
+      return res.json({
+        success: false,
+        errorCode: ErrorCodes.CANCELLATION_FAILED,
+        message: "Cancellation Failed",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -141,7 +194,11 @@ const doctorDashboard = async (req, res) => {
     res.json({ success: true, dashData });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -154,7 +211,11 @@ const doctorProfile = async (req, res) => {
     res.json({ success: true, profileData });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
@@ -165,10 +226,18 @@ const updateDoctorProfile = async (req, res) => {
 
     await doctorModel.findByIdAndUpdate(docId, { fees, address, available });
 
-    res.json({ success: true, message: "Profile Updated" });
+    res.json({
+      success: true,
+      errorCode: ErrorCodes.PROFILE_UPDATED,
+      message: "Profile Updated",
+    });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.json({
+      success: false,
+      errorCode: ErrorCodes.SERVER_ERROR,
+      message: error.message,
+    });
   }
 };
 
