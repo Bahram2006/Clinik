@@ -1,12 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import { getErrorMessage } from "../utils/errorHandler"
 
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
   const currencySymbol = "$";
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const { t } = useTranslation();
 
   const [doctors, setDoctors] = useState([]);
   const [token, setToken] = useState(
@@ -20,11 +23,11 @@ const AppContextProvider = (props) => {
       if (data.success) {
         setDoctors(data.doctors);
       } else {
-        toast.error(data.message);
+        toast.error(getErrorMessage(t, null, data));
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(getErrorMessage(t, error, null));
     }
   };
 
@@ -36,11 +39,11 @@ const AppContextProvider = (props) => {
       if (data.success) {
         setUserData(data.userData);
       } else {
-        toast.error(data.message);
+        toast.error(getErrorMessage(t, null, data));
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(getErrorMessage(t, error, null));
     }
   };
 
