@@ -1,0 +1,107 @@
+{
+  "navbar": {
+    "admin": "Админ",
+    "doctor": "Врач",
+    "logout": "Выйти"
+  },
+  "sidebar": {
+    "dashboard": "Панель управления",
+    "appointments": "Записи",
+    "add_doctor": "Добавить врача",
+    "doctor_list": "Список врачей",
+    "profile": "Профиль"
+  },
+  "add_doctor": {
+    "title": "Добавить врача",
+    "upload_picture": "Загрузите фото врача",
+    "doctor_name": "Имя врача",
+    "name_placeholder": "Имя",
+    "doctor_email": "Email врача",
+    "doctor_password": "Пароль врача",
+    "experience": "Опыт",
+    "fees": "Стоимость",
+    "fees_placeholder": "стоимость",
+    "speciality": "Специальность",
+    "education": "Образование",
+    "education_placeholder": "Образование",
+    "address": "Адрес",
+    "address1_placeholder": "адрес 1",
+    "address2_placeholder": "адрес 2",
+    "about_doctor": "О враче",
+    "about_placeholder": "напишите о враче",
+    "submit": "Добавить врача",
+    "image_not_selected": "Изображение не выбрано",
+    "years": "Год"
+  },
+  "all_appointments": {
+    "title": "Все записи",
+    "patient": "Пациент",
+    "age": "Возраст",
+    "date_time": "Дата и время",
+    "doctor": "Врач",
+    "fees": "Стоимость",
+    "actions": "Действия",
+    "cancelled": "Отменено",
+    "completed": "Завершено"
+  },
+  "dashboard": {
+    "doctors": "Врачи",
+    "appointments": "Записи",
+    "patients": "Пациенты",
+    "latest_bookings": "Последние записи",
+    "cancelled": "Отменено",
+    "completed": "Завершено"
+  },
+  "doctors_list": {
+    "title": "Все врачи",
+    "available": "Доступен"
+  },
+  "doctor_appointments": {
+    "title": "Все записи",
+    "patient": "Пациент",
+    "payment": "Оплата",
+    "age": "Возраст",
+    "date_time": "Дата и время",
+    "fees": "Стоимость",
+    "action": "Действие",
+    "online": "Онлайн",
+    "cash": "Наличные",
+    "cancelled": "Отменено",
+    "completed": "Завершено"
+  },
+  "doctor_dashboard": {
+    "earnings": "Доход",
+    "appointments": "Записи",
+    "patients": "Пациенты",
+    "latest_bookings": "Последние записи",
+    "cancelled": "Отменено",
+    "completed": "Завершено"
+  },
+  "doctor_profile": {
+    "about": "О враче:",
+    "appointment_fee": "Стоимость приёма:",
+    "address": "Адрес:",
+    "available": "Доступен",
+    "save": "Сохранить",
+    "edit": "Редактировать"
+  },
+  "login": {
+    "admin": "Админ",
+    "doctor": "Врач",
+    "login_title": "Вход",
+    "email": "Email",
+    "password": "Пароль",
+    "login_button": "Войти",
+    "doctor_login_prompt": "Вход для врача?",
+    "admin_login_prompt": "Вход для админа?",
+    "click_here": "Нажмите здесь"
+  },
+  "specialities": {
+    "General physician": "Терапевт",
+    "Gynecologist": "Гинеколог",
+    "Dermatologist": "Дерматолог",
+    "Pediatricians": "Педиатр",
+    "Neurologist": "Невролог",
+    "Gastroenterologist": "Гастроэнтеролог"
+  }
+}

@@ -44,9 +44,7 @@ const Navbar = () => {
           <button
             onClick={() => changeLanguage("tk")}
             className={`px-3 py-1 rounded-full transition-all ${
-              i18n.language === "tk"
-                ? "bg-primary text-white"
-                : "text-gray-500"
+              i18n.language === "tk" ? "bg-primary text-white" : "text-gray-500"
             }`}
           >
             TK
@@ -54,12 +52,18 @@ const Navbar = () => {
           <button
             onClick={() => changeLanguage("en")}
             className={`px-3 py-1 rounded-full transition-all ${
-              i18n.language === "en"
-                ? "bg-primary text-white"
-                : "text-gray-500"
+              i18n.language === "en" ? "bg-primary text-white" : "text-gray-500"
             }`}
           >
             EN
+          </button>
+          <button
+            onClick={() => changeLanguage("ru")}
+            className={`px-3 py-1 rounded-full transition-all ${
+              i18n.language === "ru" ? "bg-primary text-white" : "text-gray-500"
+            }`}
+          >
+            RU
           </button>
         </div>
 
