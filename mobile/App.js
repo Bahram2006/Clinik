@@ -1,18 +1,18 @@
 // App.js
 
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Toast from 'react-native-toast-message';
-import AppContextProvider from './src/context/AppContext';
 import AppNavigator from './src/navigation/AppNavigator';
-import './src/localization/i18n'; // i18n ýüklemek üçin
+import { AppContextProvider } from './src/context/AppContext';
+import './src/localization/i18n';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <AppContextProvider>
+        <StatusBar style="auto" />
         <AppNavigator />
-        <Toast />
       </AppContextProvider>
     </SafeAreaProvider>
   );
